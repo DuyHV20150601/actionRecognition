@@ -1,0 +1,11 @@
+/dataset/*
+/venv/*
+.idea/*
+/models/face/*
+/models/pose/*
+/models/hand/*
+/models/cameraParameters/*
+*.prototxt
+*.caffemodel
+/models/*
+
