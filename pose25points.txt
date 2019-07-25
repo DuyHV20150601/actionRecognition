@@ -1,1 +1,0 @@
-[(167, 117), (167, 205), (100, 206), None, None, (229, 201), None, None, None, None, None, None, None, None, None, (152, 102), (178, 101), (131, 117), (198, 116), None, None, None, None, None, None]

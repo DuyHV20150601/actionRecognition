@@ -93,7 +93,7 @@ weight= 'models/pose/body_25/pose_iter_584000.caffemodel'
 poses_extraction= Poses_extraction(prototxt= prototxt, weight= weight)
 net= poses_extraction.load_model()
 
-img= 'resources/frame9.jpg'
+img= 'frames/walk/TheBoondockSaints_walk_u_cm_np1_fr_med_20/frame102.jpg'
 output, shape, points= poses_extraction.get_output_of_net(net= net, frame_dir= img, npoints= 25, threshold= 0.1)
 print(output.shape[2])
 poses_extraction.draw(output_of_net= output, img_dir= img, npoints= 25, shape= shape, threshold= 0.1)
