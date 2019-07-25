@@ -7,5 +7,5 @@
 /models/cameraParameters/*
 *.prototxt
 *.caffemodel
-/models/*
+
 
