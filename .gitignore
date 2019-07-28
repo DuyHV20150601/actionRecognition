@@ -8,5 +8,5 @@
 *.prototxt
 *.caffemodel
 /frames/*
-/rank-ordered-autoencoder/*
+/rank-ordered-autoencoder/
 .vscode/*
