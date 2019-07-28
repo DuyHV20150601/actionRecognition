@@ -9,4 +9,4 @@
 *.caffemodel
 /frames/*
 /rank-ordered-autoencoder/*
-./vscode
+.vscode
