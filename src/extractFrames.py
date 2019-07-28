@@ -47,18 +47,18 @@ class Extractor(object):
         os.makedirs(path_out)
         cap= cv2.VideoCapture(path_in)
         count= 0
-        video_names_txt= open(path_out+'video_names_txt.txt', 'w+')
+        video_frames_txt= open(path_out+'video_frames_txt.txt', 'w+')
         while cap.isOpened():
             ret, frame= cap.read()
             if ret is True:
                 cv2.imwrite(os.path.join(path_out, 'frame{}.jpg'.format(count)), frame)
                 print('extracting video {} on frame {}'.format(path_in, str(count)))
                 # print(path_out+'frame{}.jpg'.format(str(count)))
-                video_names_txt.writelines(path_out+'frame{}.jpg'.format(count) +'\n')
+                video_frames_txt.writelines(path_out+'frame{}.jpg'.format(count) +'\n')
                 count+= 1
             else:
                 break
-        video_names_txt.close()
+        video_frames_txt.close()
         cap.release()
         cv2.destroyAllWindows()
 
@@ -87,3 +87,11 @@ for label in labels:
 # extractor.extraxt_frames('dataset/hmdb51_org/climb/Kletter-WM_2005-_Speed_Achtelfinale_Herren_Minatchev_Hroza_climb_f_cm_np2_ba_med_2.avi', 'climb', 'Kletter-WM_2005-_Speed_Achtelfinale_Herren_Minatchev_Hroza_climb_f_cm_np2_ba_med_2')
 
 #can improve performance by applying multithreading
+
+
+# import src.extractPose as ExtractPose
+#
+# prototxt= 'models/pose/body_25/pose_deploy.prototxt'
+# weight= 'models/pose/body_25/pose_iter_584000.caffemodel'
+# extractPose= ExtractPose.Poses_extraction(prototxt= prototxt, weight= weight)
+
