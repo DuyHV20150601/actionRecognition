@@ -105,6 +105,9 @@ import glob
 paths= glob.glob('frames/*')
 print(paths)
 for path in paths:
+    if os.path.exists('poses' + path.strip('frames')):
+        shutil.rmtree('poses' + path.strip('frames'))
+    os.makedirs('poses' + path.strip('frames'))
     sub_paths= glob.glob(path+'/*')
     # print(sub_paths)
     for sub_path in sub_paths:
@@ -114,9 +117,7 @@ for path in paths:
             # print(txt_file.readlines())
             txt_lines= txt_file.readlines()
             print(txt_lines)
-            if os.path.exists('poses'+ path.strip('frames')):
-                shutil.rmtree('poses'+ path.strip('frames'))
-            os.makedirs('poses'+ path.strip('frames'))
+
             poses_txt = open('poses' + sub_path.strip('frames') + '.txt', 'w+')
             for i in range(len(txt_lines)):
                 if i%4== 0:
@@ -129,3 +130,4 @@ for path in paths:
                     print(points)
                     poses_txt.write(str(points)+'\n')
             poses_txt.close()
+            txt_file.close()
